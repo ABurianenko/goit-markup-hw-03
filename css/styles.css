@@ -13,6 +13,12 @@
     --modal-background: #FCFCFC;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Roboto", sans-serif;
     color: var(--text);
@@ -23,8 +29,38 @@ a {
     text-decoration-line: none;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 ul, ol {
     list-style-type: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+img {
+    display: block;
+}
+
+.page-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right:auto;
+}
+
+.menu {
+    display: flex;
 }
 
 .logo {
@@ -35,10 +71,27 @@ ul, ol {
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: var(--primary-brand);
+    padding-right: 76px;
 }
 
 .logo .studio {
     color: var(--dark);
+}
+
+header {
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+header .container {
+    display: flex;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.navigation{
+    display: flex;
+    gap: 40px;
+    margin-right: 332px;
 }
 
 .navigation .link {
@@ -59,6 +112,8 @@ ul, ol {
 
 .contacts {
     font-style: normal;
+    display: flex;
+    gap: 40px;
 }
 
 .contacts .link {
@@ -72,20 +127,37 @@ ul, ol {
     color: var(--pressed-state);
 }
 
+main {
+    flex-grow: 1;
+}
+
+.section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
 .hero {
     background-color: #2E2F42;
 }
 
 .main-title {
+    display: flex;
     font-weight: 700;
     font-size: 56px;
     line-height: 1.07;
     letter-spacing: 0.02em;
     text-align: center;
     color: var(--white-background);
+    width: 496px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 48px;
+    flex-shrink: 0;
 }
 
 .order-button {
+    display: block;
+    gap: 10px;
     font-family: inherit;
     font-size: 16px;
     cursor: pointer;
@@ -94,6 +166,14 @@ ul, ol {
     line-height: 1.5;
     letter-spacing: 0.04em;
     color: var(--white-background);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    width: 169px;
+    height: 56px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
 }
 
 .order-button:hover,
@@ -101,8 +181,29 @@ ul, ol {
     background-color: var(--pressed-state);
 }
 
-.trns-text {
-    color: transparent;
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    border: 0;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+}
+
+.features-list {
+    display: inline-flex;
+}
+
+.features-item {
+    max-width: 264px;
+}
+
+.features-item:not(:last-child) {
+    margin-right: 24px;
 }
 
 .features-list .features-name {
@@ -111,6 +212,7 @@ ul, ol {
     line-height: 1.2;
     letter-spacing: 0.02em;
     color: var(--dark);
+    margin-bottom: 8px;
 }
 
 .features-list .text {
@@ -124,6 +226,10 @@ ul, ol {
     background-color: var(--light)
 }
 
+.team-list {
+    display: inline-flex;
+}
+
 .team .title {
     font-weight: 700;
     font-size: 36px;
@@ -132,10 +238,22 @@ ul, ol {
     text-transform: capitalize;
     text-align: center;
     color: var(--dark);
+    margin-bottom: 72px;
 }
 
 .team-card {
     background-color: var(--white-background);
+    border-radius: 0 0 4px 4px;
+    padding: 0px 0px 32px 0px;
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+}
+
+.team-card:not(:last-child) {
+    margin-right: 24px;
+}
+
+.member-photo {
+    margin-bottom: 32px;
 }
 
 .member-name {
@@ -144,12 +262,20 @@ ul, ol {
     line-height: 1.2;
     letter-spacing: 0.02em;
     color: var(--dark);
+    margin-bottom: 8px;
+    text-align: center;
 }
 
 .member-position {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
+    text-align: center;
+}
+
+.portfolio-list {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .portfolio .title  {
@@ -160,6 +286,24 @@ ul, ol {
     text-transform: capitalize;
     text-align: center;
     color: var(--dark);
+    margin-bottom: 72px;
+}
+
+.portfolio-card {
+    width: 360px;
+    margin-right: 24px;
+}
+
+.portfolio-card:nth-child(3n) {
+    margin-right: 0;
+}
+
+.box {
+    padding-left: 16px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--accent);
+    border-left: 1px solid var(--accent);
+    border-right: 1px solid var(--accent);
 }
 
 .product-name {
@@ -168,6 +312,7 @@ ul, ol {
     line-height: 1.2;
     letter-spacing: 0.02em;
     color: var(--dark);
+    padding: 32px 0 8px 0;
 }
 
 .product-type {
@@ -181,6 +326,13 @@ ul, ol {
     background-color: var(--dark);
 }
 
+.footer .container {
+    width: 264px;
+    text-align: left;
+    margin: 100px auto 100px 156px;
+    padding: 0;
+}
+
 .logo .footer-logo {
     color: var(--light);
 }
@@ -188,4 +340,5 @@ ul, ol {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--light);
+    margin-top: 16px;
 }
