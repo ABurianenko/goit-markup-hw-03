@@ -53,7 +53,7 @@ img {
 
 .container {
     max-width: 1158px;
-    padding: 0 15px;
+    padding: 0 15px 0 15px;
     margin-left: auto;
     margin-right:auto;
 }
@@ -79,12 +79,12 @@ img {
 }
 
 .header {
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid var(--accent);
 }
 
 .header .container {
     display: flex;
-    padding: 24px 0;
+    padding: 24px 0 24px;
 }
 
 .navigation{
@@ -325,12 +325,12 @@ main {
 
 .footer {
     background-color: var(--dark);
+    padding: 100px 0 100px;
 }
 
 .footer .container {
     width: 264px;
     text-align: left;
-    padding: 100px 0 100px;
     margin-left: 156px;
 }
 
